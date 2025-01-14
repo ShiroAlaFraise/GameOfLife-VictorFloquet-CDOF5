@@ -54,9 +54,9 @@ def update_grid(grid):
 rows, cols = 10, 10  # Taille de la grille
 grid = create_grid(rows, cols)
 
-generations = 5
+generations = 25
 for gen in range(generations):
     print(f"Generation {gen + 1}:")
     display_grid(grid)
     grid = update_grid(grid)
-    time.sleep(1)  # Ajouter un délai pour visualiser les changements
+    time.sleep(0.5)  # Ajouter un délai pour visualiser les changements
