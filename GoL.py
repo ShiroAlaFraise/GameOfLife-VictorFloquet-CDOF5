@@ -1,8 +1,11 @@
+import time
+import os
+
 def create_grid(rows, cols):
     grid = [[" " for _ in range(cols)] for _ in range(rows)]
 
     # Position centrale
-    center_row, center_col = rows // 4, cols //4
+    center_row, center_col = rows // 4, cols // 4
 
     # Ajouter un glider (structure mobile)
     grid[center_row][center_col + 1] = "#"
@@ -14,10 +17,12 @@ def create_grid(rows, cols):
     return grid
 
 def display_grid(grid):
+    os.system('cls' if os.name == 'nt' else 'clear')  # Effacer l'écran
     for row in grid:
         print(' '.join(str(cell) for cell in row))
+    print("\n")
 
-def check_neighbors(grid,row,col):
+def check_neighbors(grid, row, col):
     rows, cols = len(grid), len(grid[0])
     directions = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
     live_neighbors = 0
@@ -54,3 +59,4 @@ for gen in range(generations):
     print(f"Generation {gen + 1}:")
     display_grid(grid)
     grid = update_grid(grid)
+    time.sleep(1)  # Ajouter un délai pour visualiser les changements

@@ -34,4 +34,13 @@
      git push origin feature-name
      ```
   5. Create a pull request on the original repository to propose your changes.
+  6. 
+**Animation Update**:
+Description: The project now includes an updated grid display for continuous animation. The screen is cleared between generations to provide a smooth visualization of the cell evolution.
 
+Changes Made:
+- Added screen clearing functionality using ANSI escape sequences.
+- Introduced a delay between generations for better visualization.
+- Improved code readability and comments.
+
+This update includes a new section describing the animation update and the changes made to the project.
